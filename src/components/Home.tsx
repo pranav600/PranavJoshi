@@ -15,29 +15,33 @@ const Home = () => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex-1 flex flex-col  items-center justify-center gap-6 relative z-10 max-w-2xl"
+        className="flex-1 flex flex-col items-start justify-center gap-6 relative z-10 max-w-2xl"
       >
-        <div className="space-y-3">
-          <h1 className="text-6xl md:text-8xl font-bold text-white">
-            Pranav <span className="text-green-500">Joshi</span>
-          </h1>
+        <div className="flex flex-col gap-4 justify-center ml-20  items-start">
+          <div>
+            <h1 className="md:text-7xl font-bold font-mono text-white">
+              Pranav <span className="text-green-500">Joshi</span>
+            </h1>
+          </div>
+          <div>
+            <p className="text-lg md:text-xl text-gray-400 font-mono max-w-xl">
+              I'm a creative developer who loves turning ideas into clean,
+              interactive web experiences. I'm passionate about crafting smooth,
+              intuitive interfaces with pixel-perfect design that feel as good
+              as they look.
+            </p>
+          </div>
+          <div>
+          <a
+            href="https://drive.google.com/file/d/1HtV7cSltNXiGJtYYwRYmG5SZEvy8Q7zI/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-3 bg-green-600 hover:bg-green-500 text-white font-mono font-semibold rounded-md shadow transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black"
+          >
+            My Resume!
+          </a>
+          </div>
         </div>
-
-        <p className="text-lg md:text-xl text-gray-400 font-mono max-w-xl">
-          I'm a creative developer who loves turning ideas into clean,
-          interactive web experiences. I'm passionate about crafting smooth,
-          intuitive interfaces with pixel-perfect design that feel as good as
-          they look.
-        </p>
-
-        <motion.a
-          href="#case-studies"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg shadow-lg transition-all text-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black"
-        >
-          View My Work
-        </motion.a>
       </motion.div>
 
       <motion.div

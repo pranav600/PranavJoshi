@@ -4,32 +4,39 @@ import { motion } from "framer-motion";
 
 const caseStudies = [
   {
+    title: "Luxoro - Online Store",
+    description:
+      "Discover premium fashion with Luxoro — your destination for stylish, elegant, and modern clothing at affordable prices.",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=90",
+    tech: [
+      "React",
+      "NextJS",
+      "Tailwind CSS",
+      "TypeScript",
+      "NodeJS",
+      "MongoDB",
+    ],
+    link: "https://luxoro-store.vercel.app/",
+  },
+  {
     title: "AI Image Generator",
     description:
-      "Generate amazing visuals from text prompts with powerful AI technology.",
+      "Transform your ideas into stunning visuals instantly with the power of advanced AI-driven image generation.",
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
-    tech: ["React", "Next.js", "Tailwind CSS"],
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1600&q=90",
+    tech: ["React", "Next.js", "Tailwind CSS", "Hugging API"],
     link: "https://ai-image-generator-ten-theta.vercel.app/",
   },
-  {
-    title: "Property Recommendation",
-    description:
-      "Discover ideal properties based on your preferences and real-time data insights.",
-    image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
-    tech: ["Python", "Streamlit", "FlaskAPI"],
-    link: "",
-  },
-  {
-    title: "Stock Price Prediction",
-    description:
-      "A productivity app for managing tasks and projects with team collaboration.",
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80",
-    tech: ["React", "Firebase", "TypeScript"],
-    link: "",
-  },
+  // {
+  //   title: "Property Recommendation",
+  //   description:
+  //     "Discover ideal properties based on your preferences and real-time data insights.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+  //   tech: ["Python", "Streamlit", "FlaskAPI"],
+  //   link: "",
+  // }
 ];
 
 const CaseStudies = () => {
@@ -49,13 +56,13 @@ const CaseStudies = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
             Case Studies
           </h2>
           <div className="h-1 w-20 bg-green-500 rounded-full mx-auto" />
         </motion.div>
 
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
           {caseStudies.map((study, index) => (
             <motion.div
               key={study.title}
@@ -80,20 +87,14 @@ const CaseStudies = () => {
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    {study.link && (
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                        <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-semibold bg-black/50 px-4 py-2 rounded-full">
-                          View Project →
-                        </span>
-                      </div>
-                    )}
+                    {false}
                   </div>
                 </a>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-500 transition-colors duration-300">
+                  <h3 className="text-xl font-mono font-bold text-white mb-2 group-hover:text-green-500 transition-colors duration-300">
                     {study.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 flex-1">
+                  <p className="text-gray-300 font-mono mb-4 flex-1">
                     {study.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">

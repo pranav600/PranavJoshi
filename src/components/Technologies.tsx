@@ -11,6 +11,7 @@ import {
   FaOctopusDeploy,
   FaPython,
   FaReact,
+  FaWind,
 } from "react-icons/fa";
 
 const technologies = [
@@ -39,6 +40,7 @@ const technologies = [
       { name: "Figma", logo: <FaFigma /> },
       { name: "Cursor AI", logo: <FaBrain /> },
       { name: "Vercel", logo: <FaOctopusDeploy /> },
+      { name: "Windsurf", logo: <FaWind /> },
     ],
   },
 ];
@@ -47,15 +49,13 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className="bg-[#000000] py-20 px-4 relative overflow-hidden"
+      className="bg-[#000000] py-20 px-4 relative overflow-hidden font-mono"
     >
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 via-transparent to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
@@ -64,7 +64,6 @@ const Technologies = () => {
             Technologies
           </h2>
           <div className="h-1 w-20 bg-green-500 rounded-full mx-auto" />
-          
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -81,7 +80,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold text-white mb-8 group-hover:text-green-500 transition-colors duration-300">
                   {col.title}
                 </h3>
-                <ul className="flex flex-col gap-4 w-full">
+                <ul className={`${col.title === "Tools" ? "grid grid-cols-1 sm:grid-cols-2" : "flex flex-col"} gap-4 w-full`}>
                   {col.items.map((tech, index) => (
                     <motion.li
                       key={tech.name}

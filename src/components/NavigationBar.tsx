@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Case Studies", href: "#case-studies" },
