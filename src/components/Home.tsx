@@ -25,11 +25,11 @@ const Home = () => {
           </div>
           <div>
             <p className="text-lg md:text-xl text-gray-400 font-mono max-w-xl">
-              I'm a creative developer who loves turning ideas into clean,
-              interactive web experiences. I'm passionate about crafting smooth,
+              I&apos;m a creative developer who loves turning ideas into clean,
+              interactive web experiences. I&apos;m passionate about crafting smooth,
               intuitive interfaces with pixel-perfect design that feel as good
               as they look.
-            </p>
+            </p>  
           </div>
           <div>
           <a
