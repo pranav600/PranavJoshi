@@ -1,3 +1,5 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Case Studies", href: "#case-studies" },
@@ -23,7 +25,26 @@ export default function NavigationBar() {
             ))}
           </ul>
         </div>
-        
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/pranav600"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="text-gray-300 hover:text-green-400 transition-colors duration-200"
+          >
+            <FaGithub className="text-2xl" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/joshipranav3322/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+          >
+            <FaLinkedin className="text-2xl" />
+          </a>
+        </div>
       </div>
     </nav>
   );
