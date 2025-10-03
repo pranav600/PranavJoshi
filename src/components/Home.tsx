@@ -65,7 +65,7 @@ const Home = () => {
             {/* Image container with border and shadow - increased size */}
             <div className="relative w-72 h-72 md:w-[28rem] md:h-[28rem] rounded-full overflow-hidden border-4 border-green-500/30 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
               <Image
-                src="/image.jpg"
+                src="/profile.jpg"
                 alt="Profile image"
                 width={500}
                 height={500}
