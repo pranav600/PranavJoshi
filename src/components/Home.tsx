@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="flex flex-col-reverse md:flex-row items-center justify-center w-full min-h-screen bg-black px-4 md:px-8 relative overflow-hidden gap-8 md:gap-16"
+      className="flex flex-col-reverse md:flex-row items-center justify-center w-full min-h-screen px-4 md:px-8 relative overflow-hidden gap-8 md:gap-16"
     >
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 via-transparent to-transparent pointer-events-none" />

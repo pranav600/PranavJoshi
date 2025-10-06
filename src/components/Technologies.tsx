@@ -49,7 +49,7 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className="bg-[#000000] py-20 px-4 relative overflow-hidden font-mono"
+      className=" py-20 px-4 relative overflow-hidden font-mono"
     >
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 via-transparent to-transparent pointer-events-none" />

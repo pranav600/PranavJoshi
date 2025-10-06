@@ -43,7 +43,7 @@ const CaseStudies = () => {
   return (
     <section
       id="case-studies"
-      className="bg-[#000000] py-20 px-4 min-h-[90vh] relative overflow-hidden"
+      className="pt-16 md:pt-20 pb-12 px-4 min-h-[90vh] relative overflow-hidden"
     >
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 via-transparent to-transparent pointer-events-none" />
