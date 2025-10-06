@@ -26,20 +26,20 @@ const Home = () => {
           <div>
             <p className="text-lg md:text-xl text-gray-400 font-mono max-w-xl">
               I&apos;m a creative developer who loves turning ideas into clean,
-              interactive web experiences. I&apos;m passionate about crafting smooth,
-              intuitive interfaces with pixel-perfect design that feel as good
-              as they look.
-            </p>  
+              interactive web experiences. I&apos;m passionate about crafting
+              smooth, intuitive interfaces with pixel-perfect design that feel
+              as good as they look.
+            </p>
           </div>
           <div>
-          <a
-            href="https://drive.google.com/file/d/1HtV7cSltNXiGJtYYwRYmG5SZEvy8Q7zI/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-3 bg-green-600 hover:bg-green-500 text-white font-mono font-semibold rounded-md shadow transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black"
-          >
-            My Resume!
-          </a>
+            <a
+              href="https://drive.google.com/file/d/1HtV7cSltNXiGJtYYwRYmG5SZEvy8Q7zI/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-3 bg-green-600 hover:bg-green-500 text-white font-mono font-semibold rounded-md shadow transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black"
+            >
+              My Resume!
+            </a>
           </div>
         </div>
       </motion.div>
