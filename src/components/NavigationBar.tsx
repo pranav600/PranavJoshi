@@ -51,7 +51,7 @@ export default function NavigationBar() {
         {/* Right: Socials (desktop) */}
         <div className="hidden md:flex items-center gap-4 justify-self-end">
           <a
-            href="https://github.com/pranav600"
+            href={process.env.NEXT_PUBLIC_GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
@@ -60,7 +60,7 @@ export default function NavigationBar() {
             <FaGithub className="text-2xl" />
           </a>
           <a
-            href="https://www.linkedin.com/in/joshipranav3322/"
+            href={process.env.NEXT_PUBLIC_LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
@@ -69,8 +69,9 @@ export default function NavigationBar() {
             <FaLinkedin className="text-2xl" />
           </a>
           <a
-            href="mailto:pranavjoshitkd@gmail.com"
+            href={`mailto:${process.env.NEXT_PUBLIC_MY_EMAIL}`}
             className="text-gray-400 hover:text-green-500 transition-colors duration-300"
+            aria-label="Email me"
           >
             <FaEnvelope className="text-xl" />
           </a>

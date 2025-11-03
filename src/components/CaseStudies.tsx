@@ -7,8 +7,7 @@ const caseStudies = [
     title: "Luxoro - Online Store",
     description:
       "Discover premium fashion with Luxoro — your destination for stylish, elegant, and modern clothing at affordable prices.",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=90",
+    image: "/luxoro-banner.png",
     tech: [
       "React",
       "NextJS",
@@ -77,7 +76,7 @@ const CaseStudies = () => {
                   href={study.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-48 w-full relative block cursor-pointer"
+                  className="h-80 w-full relative block cursor-pointer"
                 >
                   <div className="relative w-full h-full">
                     <Image
