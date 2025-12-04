@@ -64,7 +64,7 @@ const CaseStudies = () => {
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-10px" }}
           transition={{ duration: 0.8 }}
         >
           <span className="text-green-500 font-mono text-sm tracking-widest mb-4 inline-block">
