@@ -1,19 +1,23 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const caseStudies = [
   {
     title: "Luxoro - Online Store",
     description:
-      "Discover premium fashion with Luxoro — your destination for stylish, elegant, and modern clothing at affordable prices.",
+      "A premium e-commerce platform built with modern web technologies to deliver a seamless shopping experience.",
     image: "/luxoro-banner.png",
+    category: "Web Development",
+    year: "2025",
     tech: [
       "React",
-      "NextJS",
+      "Next.js",
       "Tailwind CSS",
       "TypeScript",
-      "NodeJS",
+      "Node.js",
       "MongoDB",
     ],
     link: "https://luxoro-store.vercel.app/",
@@ -21,91 +25,146 @@ const caseStudies = [
   {
     title: "AI Image Generator",
     description:
-      "Transform your ideas into stunning visuals instantly with the power of advanced AI-driven image generation.",
+      "An advanced image generation tool that transforms text prompts into stunning visuals using AI technology.",
     image:
       "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1600&q=90",
-    tech: ["React", "Next.js", "Tailwind CSS", "Hugging API"],
+    category: "AI Application",
+    year: "2024",
+    tech: ["React", "Next.js", "Tailwind CSS", "Hugging Face API"],
     link: "https://ai-image-generator-ten-theta.vercel.app/",
   },
-  // {
-  //   title: "Property Recommendation",
-  //   description:
-  //     "Discover ideal properties based on your preferences and real-time data insights.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
-  //   tech: ["Python", "Streamlit", "FlaskAPI"],
-  //   link: "",
-  // }
+  // Add more case studies as needed
 ];
 
 const CaseStudies = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -50]);
+
   return (
     <section
       id="case-studies"
-      className="pt-16 md:pt-20 pb-12 px-4 min-h-[90vh] relative overflow-hidden"
+      className="relative py-24 overflow-hidden  text-white"
+      ref={containerRef}
     >
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 via-transparent to-transparent pointer-events-none" />
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-b"></div>
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
-            Case Studies
-          </h2>
-          <div className="h-1 w-20 bg-green-500 rounded-full mx-auto" />
+          <span className="text-green-500 font-mono text-sm tracking-widest mb-4 inline-block">
+            MY WORK
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">Case Studies</h2>
+          <div className="w-20 h-1 bg-green-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
-          {caseStudies.map((study, index) => (
+        {/* Case studies grid */}
+        <div className="space-y-32">
+          {caseStudies.map((project, index) => (
             <motion.div
-              key={study.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={project.title}
+              className={`group relative flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } items-center gap-12`}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <div className="bg-[#232323] rounded-xl overflow-hidden shadow-lg flex flex-col h-full hover:scale-[1.02] transition-all duration-300">
+              {/* Image container */}
+              <motion.div
+                className={`relative w-full md:w-1/2 h-96 rounded-2xl overflow-hidden ${
+                  index % 2 === 0 ? "md:rotate-0" : "md:-rotate-0"
+                } shadow-2xl`}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.3 },
+                }}
+              >
                 <a
-                  href={study.link}
+                  href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-80 w-full relative block cursor-pointer"
                 >
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={study.image}
-                      alt={study.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    {false}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-all duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index < 2}
+                  />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center gap-2">
+                      View Project
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </span>
                   </div>
                 </a>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-mono font-bold text-white mb-2 group-hover:text-green-500 transition-colors duration-300">
-                    {study.title}
-                  </h3>
-                  <p className="text-gray-300 font-mono mb-4 flex-1">
-                    {study.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {study.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-[#000] text-gray-200 text-xs font-mono px-3 py-1 rounded-full border border-gray-700 group-hover:border-green-500/50 transition-colors duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              </motion.div>
+
+              {/* Content */}
+              <div className="w-full md:w-1/2 space-y-6">
+                <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <span className="px-3 py-1 bg-gray-800 rounded-full">
+                    {project.category}
+                  </span>
+                  <span>{project.year}</span>
+                </div>
+
+                <h3 className="text-3xl md:text-4xl font-bold">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-500 transition-colors duration-300"
+                  >
+                    {project.title}
+                  </a>
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-gray-900/50 text-gray-300 text-xs font-mono rounded-full border border-gray-800 hover:border-green-500/50 transition-colors duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
