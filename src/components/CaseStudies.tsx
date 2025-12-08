@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const caseStudies = [
   {
-    title: "Luxoro - Online Store",
+    title: "Luxoro - Online E-commerce platform",
     description:
       "A premium e-commerce platform built with modern web technologies to deliver a seamless shopping experience.",
     image: "/luxoro-banner.png",
@@ -26,12 +26,11 @@ const caseStudies = [
     title: "AI Image Generator",
     description:
       "An advanced image generation tool that transforms text prompts into stunning visuals using AI technology.",
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1600&q=90",
+    image: "/image-generator.png",
     category: "AI Application",
     year: "2024",
     tech: ["React", "Next.js", "Tailwind CSS", "Hugging Face API"],
-    link: "https://ai-image-generator-ten-theta.vercel.app/",
+    link: "https://visionbypranav.vercel.app/",
   },
   // Add more case studies as needed
 ];
