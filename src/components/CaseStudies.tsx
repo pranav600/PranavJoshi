@@ -20,7 +20,7 @@ const caseStudies = [
       "Node.js",
       "MongoDB",
     ],
-    link: "https://luxoro-store.vercel.app/",
+    link: process.env.NEXT_PUBLIC_LUXORO_LINK,
   },
   {
     title: "AI Image Generator",
@@ -30,7 +30,7 @@ const caseStudies = [
     category: "AI Application",
     year: "2024",
     tech: ["React", "Next.js", "Tailwind CSS", "Hugging Face API"],
-    link: "https://visionbypranav.vercel.app/",
+    link: process.env.NEXT_PUBLIC_AI_IMAGE_GENERATOR_LINK,
   },
   // Add more case studies as needed
 ];
@@ -66,9 +66,6 @@ const CaseStudies = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-green-500 font-mono text-sm tracking-widest mb-4 inline-block">
-            MY WORK
-          </span>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">Case Studies</h2>
           <div className="w-20 h-1 bg-green-500 mx-auto"></div>
         </motion.div>
@@ -137,7 +134,7 @@ const CaseStudies = () => {
                   <span className="px-3 py-1 bg-gray-800 rounded-full">
                     {project.category}
                   </span>
-                  <span>{project.year}</span>
+                  <span className="font-bold text-xl">{project.year}</span>
                 </div>
 
                 <h3 className="text-3xl md:text-4xl font-bold">
@@ -159,7 +156,7 @@ const CaseStudies = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-900/50 text-gray-300 text-xs font-mono rounded-full border border-gray-800 hover:border-green-500/50 transition-colors duration-300"
+                      className="px-4 py-1 bg-gray-100/50 text-gray-100 text-l font-mono rounded-full border border-gray-800 hover:border-green-500 transition-colors duration-300"
                     >
                       {tech}
                     </span>
