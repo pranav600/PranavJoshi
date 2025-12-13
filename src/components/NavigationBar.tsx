@@ -16,7 +16,7 @@ export default function NavigationBar() {
 
   return (
     <nav className="w-full bg-[#181818]/90 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-0xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+      <div className="max-w-0xl mx-auto px-5 py-4 grid grid-cols-3 items-center">
         {/* Left: Hamburger (mobile) */}
         <div className="flex items-center gap-4 justify-self-start">
           <button
