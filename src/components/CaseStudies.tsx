@@ -48,14 +48,9 @@ const CaseStudies = () => {
   return (
     <section
       id="case-studies"
-      className="relative py-24 overflow-hidden  text-white"
+      className="relative font-mono py-24 overflow-hidden text-white"
       ref={containerRef}
     >
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b"></div>
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section header */}

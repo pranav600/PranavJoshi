@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         {/* Site-wide background video */}
-        <video
+        {/* <video
           className="fixed inset-0 w-full h-full object-cover -z-20 motion-reduce:hidden"
           src="/matrix.mp4"
           autoPlay
@@ -37,7 +37,7 @@ export default function RootLayout({
           loop
           playsInline
           aria-hidden="true"
-        />
+        /> */}
         {/* Dark overlay for readability */}
         {/* <div className="fixed inset-0 bg-black/60 -z-10 pointer-events-none" /> */}
         <NavigationBar />
