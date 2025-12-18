@@ -11,8 +11,11 @@ const navLinks = [
   { name: "Get In Touch", href: "#contact" },
 ];
 
+import ContactModal from "./ContactModal";
+
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <nav className="w-full bg-[#181818]/90 backdrop-blur sticky top-0 z-50">
@@ -37,12 +40,18 @@ export default function NavigationBar() {
           <ul className="flex gap-8 text-sm lg:text-lg font-mono text-gray-200">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="hover:text-green-400 transition-colors duration-200"
-                >
+                <button
+                  onClick={() => {
+                    if (link.name === "Get In Touch") {
+                      setIsContactOpen(true);
+                      return;
+                    }
+                    const element = document.querySelector(link.href);
+                    element?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="hover:text-green-400 transition-colors duration-200 cursor-pointer">
                   {link.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -55,8 +64,7 @@ export default function NavigationBar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="text-gray-300 hover:text-green-400 transition-colors duration-200"
-          >
+            className="text-gray-300 hover:text-green-400 transition-colors duration-200">
             <FaGithub className="text-2xl" />
           </a>
           <a
@@ -64,16 +72,8 @@ export default function NavigationBar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-          >
+            className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
             <FaLinkedin className="text-2xl" />
-          </a>
-          <a
-            href={`mailto:${process.env.NEXT_PUBLIC_MY_EMAIL}`}
-            className="text-gray-400 hover:text-green-500 transition-colors duration-300"
-            aria-label="Email me"
-          >
-            <FaEnvelope className="text-xl" />
           </a>
         </div>
       </div>
@@ -84,18 +84,28 @@ export default function NavigationBar() {
           <ul className="flex flex-col px-4 py-3 gap-3 text-sm font-mono text-gray-200">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="block w-full py-2 hover:text-green-400"
-                  onClick={() => setOpen(false)}
-                >
+                <button
+                  onClick={() => {
+                    setOpen(false);
+                    if (link.name === "Get In Touch") {
+                      setIsContactOpen(true);
+                      return;
+                    }
+                    const element = document.querySelector(link.href);
+                    element?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="block w-full text-left py-2 hover:text-green-400">
                   {link.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
         </div>
       )}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </nav>
   );
 }

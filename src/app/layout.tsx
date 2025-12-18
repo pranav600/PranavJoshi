@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "../components/NavigationBar";
+import SnowfallBackground from "@/components/SnowfallBackground";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
+        <SnowfallBackground />
+
         {/* Site-wide background video */}
         {/* <video
           className="fixed inset-0 w-full h-full object-cover -z-20 motion-reduce:hidden"
@@ -42,6 +45,7 @@ export default function RootLayout({
         {/* <div className="fixed inset-0 bg-black/60 -z-10 pointer-events-none" /> */}
         <NavigationBar />
         {children}
+        <Toaster position="bottom-right" theme="dark" />
       </body>
     </html>
   );

@@ -54,17 +54,12 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className=" py-20 px-4 relative overflow-hidden font-mono"
-    >
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 via-transparent to-transparent pointer-events-none" />
-
+      className="py-20 px-4 relative overflow-hidden font-mono">
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Technologies
           </h2>
@@ -79,9 +74,10 @@ const Technologies = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="group"
-            >
-              <PixelCard variant="default" className="w-full h-full min-w-[400px] min-h-[400px]">
+              className="group">
+              <PixelCard
+                variant="default"
+                className="w-full h-full min-w-[400px] min-h-[400px]">
                 <div
                   style={{
                     position: "absolute",
@@ -92,8 +88,7 @@ const Technologies = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "2rem",
-                  }}
-                >
+                  }}>
                   <h3 className="text-4xl font-bold text-white mb-8 group-hover:text-green-500 transition-colors duration-300">
                     {col.title}
                   </h3>
@@ -102,8 +97,7 @@ const Technologies = () => {
                       col.title === "Tools"
                         ? "grid grid-cols-1 sm:grid-cols-1"
                         : "flex flex-col"
-                    } gap-4 w-full`}
-                  >
+                    } gap-4 w-full`}>
                     {col.items.map((tech, index) => (
                       <motion.li
                         key={tech.name}
@@ -111,8 +105,7 @@ const Technologies = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="flex items-center gap-3 group/item"
-                      >
+                        className="flex items-center gap-3 group/item">
                         <span className="inline-flex items-center justify-center w-10 h-10 bg-[#181818] rounded-full border border-gray-700 group-hover/item:border-green-500/50 transition-colors duration-300">
                           <span className="text-xl text-green-400 group-hover/item:text-green-500 transition-colors duration-300">
                             {tech.logo}

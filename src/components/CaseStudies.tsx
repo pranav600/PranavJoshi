@@ -48,10 +48,8 @@ const CaseStudies = () => {
   return (
     <section
       id="case-studies"
-      className="relative font-mono py-24 overflow-hidden text-white"
-      ref={containerRef}
-    >
-
+      className="relative font-mono flex flex-col-reverse md:flex-row items-center justify-center w-full min-h-screen px-4 md:px-8 overflow-hidden gap-8 md:gap-16"
+      ref={containerRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section header */}
         <motion.div
@@ -59,8 +57,7 @@ const CaseStudies = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-        >
+          transition={{ duration: 0.8 }}>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">Case Studies</h2>
           <div className="w-20 h-1 bg-green-500 mx-auto"></div>
         </motion.div>
@@ -76,8 +73,7 @@ const CaseStudies = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-            >
+              transition={{ duration: 0.8, delay: index * 0.1 }}>
               {/* Image container */}
               <motion.div
                 className={`relative w-full md:w-1/2 h-96 rounded-2xl overflow-hidden ${
@@ -86,13 +82,11 @@ const CaseStudies = () => {
                 whileHover={{
                   y: -10,
                   transition: { duration: 0.3 },
-                }}
-              >
+                }}>
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -113,8 +107,7 @@ const CaseStudies = () => {
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
+                        strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                       </svg>
@@ -137,8 +130,7 @@ const CaseStudies = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-green-500 transition-colors duration-300"
-                  >
+                    className="hover:text-green-500 transition-colors duration-300">
                     {project.title}
                   </a>
                 </h3>
@@ -151,8 +143,7 @@ const CaseStudies = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-1 bg-gray-100/50 text-gray-100 text-l font-mono rounded-full border border-gray-800 hover:border-green-500 transition-colors duration-300"
-                    >
+                      className="px-4 py-1 bg-gray-100/50 text-gray-100 text-l font-mono rounded-full border border-gray-800 hover:border-green-500 transition-colors duration-300">
                       {tech}
                     </span>
                   ))}
