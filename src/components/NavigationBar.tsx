@@ -19,14 +19,13 @@ export default function NavigationBar() {
 
   return (
     <nav className="w-full bg-[#181818]/90 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-0xl mx-auto px-5 py-4 grid grid-cols-3 items-center">
+      <div className="max-w-0xl mx-auto px-5 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
         {/* Left: Hamburger (mobile) */}
         <div className="flex items-center gap-4 justify-self-start">
           <button
             className="md:hidden inline-flex items-center text-gray-200 hover:text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded"
             aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
+            onClick={() => setOpen((v) => !v)}>
             {open ? (
               <FiX className="text-2xl" />
             ) : (
@@ -37,7 +36,7 @@ export default function NavigationBar() {
 
         {/* Center: Desktop nav links */}
         <div className="hidden md:block justify-self-center">
-          <ul className="flex gap-8 text-sm lg:text-lg font-mono text-gray-200">
+          <ul className="flex gap-8 text-sm lg:text-lg font-mono text-gray-200 whitespace-nowrap">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <button

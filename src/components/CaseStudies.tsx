@@ -23,6 +23,23 @@ const caseStudies = [
     link: process.env.NEXT_PUBLIC_LUXORO_LINK,
   },
   {
+    title: "Calendar Buddy",
+    description:
+      "Built a calendar based note management app enabling users to create, view, and organize day wise notes efficiently",
+    image: "/calendar-buddy.png",
+    category: "Full Stack App",
+    year: "2025",
+    tech: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Google Auth",
+    ],
+    link: process.env.NEXT_PUBLIC_CALENDAR_BUDDY_LINK,
+  },
+  {
     title: "AI Image Generator",
     description:
       "An advanced image generation tool that transforms text prompts into stunning visuals using AI technology.",
@@ -32,6 +49,7 @@ const caseStudies = [
     tech: ["React", "Next.js", "Tailwind CSS", "Hugging Face API"],
     link: process.env.NEXT_PUBLIC_AI_IMAGE_GENERATOR_LINK,
   },
+
   // Add more case studies as needed
 ];
 
