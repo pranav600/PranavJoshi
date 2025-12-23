@@ -4,6 +4,7 @@ import "./globals.css";
 import NavigationBar from "../components/NavigationBar";
 import SnowfallBackground from "@/components/SnowfallBackground";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
         <SnowfallBackground />
-
+        <Analytics />
         {/* Site-wide background video */}
         {/* <video
           className="fixed inset-0 w-full h-full object-cover -z-20 motion-reduce:hidden"
