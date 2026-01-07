@@ -4,7 +4,6 @@ import CaseStudies from "@/components/CaseStudies";
 import Technologies from "@/components/Technologies";
 import Footer from "@/components/Footer";
 
-
 export default function MainPage() {
   return (
     <>

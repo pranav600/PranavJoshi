@@ -56,25 +56,7 @@ export default function NavigationBar() {
           </ul>
         </div>
 
-        {/* Right: Socials (desktop) */}
-        <div className="hidden md:flex items-center gap-4 justify-self-end">
-          <a
-            href={process.env.NEXT_PUBLIC_GITHUB}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            className="text-gray-300 hover:text-green-400 transition-colors duration-200">
-            <FaGithub className="text-2xl" />
-          </a>
-          <a
-            href={process.env.NEXT_PUBLIC_LINKEDIN}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
-            <FaLinkedin className="text-2xl" />
-          </a>
-        </div>
+        
       </div>
 
       {/* Mobile dropdown */}
