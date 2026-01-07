@@ -4,7 +4,7 @@ import "./globals.css";
 import NavigationBar from "../components/NavigationBar";
 import SnowfallBackground from "@/components/SnowfallBackground";
 import { Toaster } from "sonner";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
