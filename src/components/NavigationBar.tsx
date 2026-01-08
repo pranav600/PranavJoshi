@@ -8,10 +8,9 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Case Studies", href: "#case-studies" },
   { name: "Technologies", href: "#technologies" },
-  { name: "Get In Touch", href: "#contact" },
 ];
 
-import ContactModal from "./ContactModal";
+
 
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
@@ -55,8 +54,6 @@ export default function NavigationBar() {
             ))}
           </ul>
         </div>
-
-        
       </div>
 
       {/* Mobile dropdown */}
@@ -83,10 +80,6 @@ export default function NavigationBar() {
           </ul>
         </div>
       )}
-      <ContactModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-      />
     </nav>
   );
 }

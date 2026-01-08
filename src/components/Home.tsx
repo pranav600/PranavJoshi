@@ -1,8 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaGithub,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 import { SiFramer, SiReact, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import TextType from "./ui/TextType";
 
 const Home = () => {
   return (
@@ -51,8 +58,8 @@ const Home = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 bg-white text-black font-bold rounded-full text-lg hover:bg-gray-200 transition-colors">
-            Resume
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full text-lg hover:bg-gray-200 transition-colors">
+            Resume <FaArrowRight />
           </motion.a>
         </motion.div>
 
@@ -72,7 +79,7 @@ const Home = () => {
                   Remote
                 </span> */}
             </div>
-            <div>
+            <div className="flex flex-col gap-1">
               <h3 className="text-xl font-bold text-white">Rajkot, India</h3>
               <p className="text-sm text-gray-400">Based in</p>
             </div>
@@ -122,7 +129,8 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            className="flex flex-col grid md:grid-cols-3 gap-4 md:gap-5">
+            {/* GitHub */}
             <a
               href={process.env.NEXT_PUBLIC_GITHUB}
               target="_blank"
@@ -130,6 +138,8 @@ const Home = () => {
               className="bg-[#09090b] aspect-square rounded-[2rem] border border-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
               <FaGithub className="text-3xl text-gray-400 group-hover:text-black transition-colors" />
             </a>
+
+            {/* LinkedIn */}
             <a
               href={process.env.NEXT_PUBLIC_LINKEDIN}
               target="_blank"
@@ -137,11 +147,28 @@ const Home = () => {
               className="bg-[#09090b] aspect-square rounded-[2rem] border border-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
               <FaLinkedin className="text-3xl text-gray-400 group-hover:text-black transition-colors" />
             </a>
-            <div className="col-span-2 h-full bg-[#09090b] rounded-[2rem] border border-white/5 flex items-center justify-center hover:border-green-500/30 transition-colors shadow-lg p-4">
-              <p className="text-gray-400 font-mono font-medium text-sm md:text-lg whitespace-nowrap">
-                &lt;Code is poetry /&gt;
-              </p>
-            </div>
+
+            {/* Email */}
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${process.env.NEXT_PUBLIC_EMAIL}&body=Heyy%20Pranav,%0D%0A%0D%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding...`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#09090b] aspect-square rounded-[2rem] border border-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
+              <FaEnvelope className="text-3xl text-gray-400 group-hover:text-black transition-colors" />
+            </a>
+          </motion.div>
+
+          {/* Code Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65 }}
+            className="bg-[#18181b] rounded-[2rem] border border-white/5 flex items-center justify-center hover:border-green-500/30 transition-colors">
+            <TextType
+              as="span"
+              text="&lt; Code is Poetry /&gt;"
+              className="text-xl font-bold text-white"
+            />
           </motion.div>
         </div>
       </div>
