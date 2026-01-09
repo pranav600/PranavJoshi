@@ -32,8 +32,8 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-green-900/20 rounded-full border border-green-500/30">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-green-400 text-sm font-semibold tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
+            <span className="text-green-600 text-sm font-semibold tracking-wide">
               AVAILABLE FOR WORK
             </span>
           </motion.div>

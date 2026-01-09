@@ -148,12 +148,12 @@ const CaseStudies = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-green-500 transition-colors duration-300">
+                    className="transition-colors duration-300">
                     {project.title}
                   </a>
                 </h3>
 
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-500 text-lg leading-relaxed">
                   {project.description}
                 </p>
 
@@ -161,7 +161,7 @@ const CaseStudies = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-1 bg-gray-100/50 text-gray-100 text-l font-mono rounded-full border border-gray-800 hover:border-green-500 transition-colors duration-300">
+                      className="px-4 py-1 bg-gray-100/50 dark:bg-gray-800 dark:text-gray-200 text-l font-mono rounded-full border border-gray-800 transition-colors duration-300">
                       {tech}
                     </span>
                   ))}

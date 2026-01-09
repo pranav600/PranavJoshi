@@ -59,7 +59,7 @@ const Technologies = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold dark:text-white mb-4">
             Technologies
           </h2>
           <div className="h-1 w-20 bg-green-500 rounded-full mx-auto" />
@@ -87,7 +87,7 @@ const Technologies = () => {
                     padding: "3rem",
                   }}>
                   <div>
-                    <h3 className="text-4xl font-bold text-gray-900 dark:text-white whitespace-nowrap group-hover:text-green-500 transition-colors duration-300">
+                    <h3 className="text-4xl font-bold text-gray-900 dark:text-white whitespace-nowrap">
                       {col.title}
                     </h3>
                   </div>
@@ -102,12 +102,12 @@ const Technologies = () => {
                           viewport={{ once: true }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           className="flex items-center gap-3 group/item">
-                          <span className="inline-flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-[#181818] rounded-full border border-gray-300 dark:border-gray-700 group-hover/item:border-green-500/50 transition-colors duration-300">
-                            <span className="text-xl text-green-400 group-hover/item:text-green-500 transition-colors duration-300">
+                          <span className="inline-flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-[#181818] rounded-full border border-gray-300 dark:border-gray-700">
+                            <span className="text-xl text-green-400">
                               {tech.logo}
                             </span>
                           </span>
-                          <span className="bg-gray-200 dark:bg-[#111] text-gray-900 dark:text-gray-200 font-mono px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 group-hover/item:border-green-500/50 transition-colors duration-300">
+                          <span className="bg-gray-200 dark:bg-[#111] text-gray-900 dark:text-gray-200 font-mono px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700">
                             {tech.name}
                           </span>
                         </motion.li>
