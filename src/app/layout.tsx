@@ -5,6 +5,7 @@ import NavigationBar from "../components/NavigationBar";
 import SnowfallBackground from "@/components/SnowfallBackground";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,26 +28,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme') || 'system';
+                const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (isDark) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
-        <SnowfallBackground />
-        <Analytics />
-        {/* Site-wide background video */}
-        {/* <video
-          className="fixed inset-0 w-full h-full object-cover -z-20 motion-reduce:hidden"
-          src="/matrix.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        /> */}
-        {/* Dark overlay for readability */}
-        {/* <div className="fixed inset-0 bg-black/60 -z-10 pointer-events-none" /> */}
-        <NavigationBar />
-        {children}
-        <Toaster position="bottom-right" theme="dark" />
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white`}>
+        <ThemeProvider>
+          <SnowfallBackground />
+          <Analytics />
+          <NavigationBar />
+          {children}
+          <Toaster position="bottom-right" />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ const Home = () => {
       id="home"
       className="min-h-screen w-full px-4 md:px-8 py-20 flex items-center justify-center relative overflow-hidden font-mono">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-[#0a0a0a] -z-10" />
+      <div className="absolute inset-0 bg-white dark:bg-[#0a0a0a] -z-10" />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-50 -z-10" />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -38,7 +38,7 @@ const Home = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
             Hi, I'm a <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
               Full Stack
@@ -47,7 +47,7 @@ const Home = () => {
             Developer<span className="text-green-500">.</span>
           </h1>
 
-          <p className="text-lg text-gray-400 max-w-xl leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
             I build accessible, pixel-perfect, and performant web experiences.
             Passionate about merging clean code with thoughtful design.
           </p>
@@ -58,7 +58,7 @@ const Home = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full text-lg hover:bg-gray-200 transition-colors">
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
             Resume <FaArrowRight />
           </motion.a>
         </motion.div>
@@ -70,18 +70,22 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-[#18181b] p-6 rounded-3xl border border-white/5 flex flex-col justify-between hover:border-green-500/30 transition-colors group">
+            className="bg-gray-100 dark:bg-[#18181b] p-4 md:p-6 rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/5 flex flex-col justify-between hover:border-green-500/30 transition-colors group">
             <div className="flex justify-between items-start">
-              <div className="p-3 bg-white/5 rounded-full group-hover:bg-green-500/20 transition-colors">
-                <FaMapMarkerAlt className="text-2xl text-gray-300 group-hover:text-green-400" />
+              <div className="p-3 bg-gray-200 dark:bg-white/5 rounded-full group-hover:bg-green-500/20 transition-colors">
+                <FaMapMarkerAlt className="text-2xl text-gray-700 dark:text-gray-300 group-hover:text-green-400" />
               </div>
               {/* <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400">
                   Remote
                 </span> */}
             </div>
             <div className="flex flex-col gap-1">
-              <h3 className="text-xl font-bold text-white">Rajkot, India</h3>
-              <p className="text-sm text-gray-400">Based in</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                Rajkot, India
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Based in
+              </p>
             </div>
           </motion.div>
 
@@ -135,8 +139,8 @@ const Home = () => {
               href={process.env.NEXT_PUBLIC_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#09090b] aspect-square rounded-[2rem] border border-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
-              <FaGithub className="text-3xl text-gray-400 group-hover:text-black transition-colors" />
+              className="bg-gray-100 dark:bg-[#09090b] aspect-square rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg">
+              <FaGithub className="text-3xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
             </a>
 
             {/* LinkedIn */}
@@ -144,8 +148,8 @@ const Home = () => {
               href={process.env.NEXT_PUBLIC_LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#09090b] aspect-square rounded-[2rem] border border-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
-              <FaLinkedin className="text-3xl text-gray-400 group-hover:text-black transition-colors" />
+              className="bg-gray-100 dark:bg-[#09090b] aspect-square rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg">
+              <FaLinkedin className="text-3xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
             </a>
 
             {/* Email */}
@@ -153,8 +157,8 @@ const Home = () => {
               href={`https://mail.google.com/mail/?view=cm&fs=1&to=${process.env.NEXT_PUBLIC_EMAIL}&body=Heyy%20Pranav,%0D%0A%0D%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding...`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#09090b] aspect-square rounded-[2rem] border border-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
-              <FaEnvelope className="text-3xl text-gray-400 group-hover:text-black transition-colors" />
+              className="bg-gray-100 dark:bg-[#09090b] aspect-square rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg">
+              <FaEnvelope className="text-3xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
             </a>
           </motion.div>
 
@@ -163,11 +167,11 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65 }}
-            className="bg-[#18181b] rounded-[2rem] border border-white/5 flex items-center justify-center hover:border-green-500/30 transition-colors">
+            className="bg-gray-100 dark:bg-[#18181b] rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:border-green-500/30 transition-colors">
             <TextType
               as="span"
               text="&lt; Code is Poetry /&gt;"
-              className="text-xl font-bold text-white"
+              className="text-base md:text-xl font-bold font-mono text-gray-900 dark:text-white"
             />
           </motion.div>
         </div>
