@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "../components/NavigationBar";
-import SnowfallBackground from "@/components/SnowfallBackground";
+import SnowfallBackground from "@/components/ui/SnowfallBackground";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/providers/ThemeProvider";

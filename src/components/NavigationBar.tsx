@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./ui/ThemeToggle";
 
@@ -13,7 +12,6 @@ const navLinks = [
 
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <nav className="w-full bg-gray-50/90 dark:bg-[#181818]/90 backdrop-blur sticky top-0 z-50 border-b border-gray-200 dark:border-white/5">
@@ -38,10 +36,6 @@ export default function NavigationBar() {
               <li key={link.name}>
                 <button
                   onClick={() => {
-                    if (link.name === "Get In Touch") {
-                      setIsContactOpen(true);
-                      return;
-                    }
                     const element = document.querySelector(link.href);
                     element?.scrollIntoView({ behavior: "smooth" });
                   }}
@@ -68,10 +62,6 @@ export default function NavigationBar() {
                 <button
                   onClick={() => {
                     setOpen(false);
-                    if (link.name === "Get In Touch") {
-                      setIsContactOpen(true);
-                      return;
-                    }
                     const element = document.querySelector(link.href);
                     element?.scrollIntoView({ behavior: "smooth" });
                   }}
