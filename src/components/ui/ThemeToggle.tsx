@@ -4,6 +4,9 @@ import { useTheme } from "@/providers/ThemeProvider";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { motion } from "framer-motion";
 
+/**
+ * ThemeToggle - Animated button component for switching between light and dark themes
+ */
 export default function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
 
