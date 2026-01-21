@@ -10,6 +10,9 @@ const navLinks = [
   { name: "Technologies", href: "#technologies" },
 ];
 
+/**
+ * NavigationBar - Responsive navigation component with theme toggle and smooth scrolling
+ */
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
 
