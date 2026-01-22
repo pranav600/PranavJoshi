@@ -11,6 +11,9 @@ import {
 import { SiFramer, SiReact, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import TextType from "./ui/TextType";
 
+/**
+ * Home - Hero section with profile information and bento grid layout
+ */
 const Home = () => {
   return (
     <section
