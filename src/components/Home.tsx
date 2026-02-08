@@ -15,6 +15,7 @@ import TextType from "./ui/TextType";
  * Home - Hero section with profile information and bento grid layout
  */
 const Home = () => {
+  // Render the persistent home section
   return (
     <section
       id="home"
