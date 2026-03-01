@@ -11,7 +11,8 @@ const navLinks = [
 ];
 
 /**
- * NavigationBar - Responsive navigation component with theme toggle and smooth scrolling
+ * NavigationBar - Sticky responsive navigation bar with mobile hamburger menu,
+ * smooth-scroll nav links, and a light/dark theme toggle.
  */
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
