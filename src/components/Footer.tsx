@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * Footer component - Displays site footer with branding
+ * Footer component - Displays site footer with branding and attribution
  */
 const Footer = () => {
   return (
