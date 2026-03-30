@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const caseStudies = [
   {
-    title: "Luxoro - Online E-commerce platform",
+    title: "Luxoro - Online E-commerce Web Application",
     description:
       "A premium e-commerce platform built with modern web technologies to deliver a seamless shopping experience.",
     image: "/luxoro-banner.png",
