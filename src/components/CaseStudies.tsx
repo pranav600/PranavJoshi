@@ -40,14 +40,37 @@ const caseStudies = [
     link: process.env.NEXT_PUBLIC_CALENDAR_BUDDY_LINK,
   },
   {
-    title: "AI Image Generator",
+    title: "PropFind",
     description:
-      "An advanced image generation tool that transforms text prompts into stunning visuals using AI technology.",
-    image: "/image-generator.png",
-    category: "AI Application",
-    year: "2024",
-    tech: ["React", "Next.js", "Tailwind CSS", "Hugging Face API"],
-    link: process.env.NEXT_PUBLIC_AI_IMAGE_GENERATOR_LINK,
+      "Built an AI-powered property recommendation engine enabling users to discover real estate properties and predict future valuations using Machine Learning",
+    image: "/propfind.png", // Update with your actual image path
+    category: "Full Stack ML App",
+    year: "2025", // Update if needed
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "Scikit-Learn",
+      "Pandas",
+    ],
+    link: process.env.NEXT_PUBLIC_PROPFIND_LINK, // Update with your actual env variable
+  },
+  {
+    title: "Blobify3D",
+    description:
+      "Built an interactive, visually engaging web application featuring dynamic grid layouts, fluid animations, and modern UI components.",
+    image: "/blobify3d.png",
+    category: "Frontend App",
+    year: "2026",
+    tech: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "TypeScript",
+    ],
+    link: process.env.NEXT_PUBLIC_BLOBIFY3D_LINK,
   },
 
   // Add more case studies as needed
