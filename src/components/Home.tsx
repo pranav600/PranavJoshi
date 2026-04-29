@@ -69,7 +69,7 @@ const Home = () => {
         </motion.div>
 
         {/* Right Column: Bento Grid */}
-        <div className="grid grid-cols-2 gap-4 h-full min-h-[500px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full min-h-[500px]">
           {/* Location Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="row-span-2 relative rounded-3xl overflow-hidden border border-white/5 group">
+            className="min-h-[300px] md:min-h-0 md:row-span-2 relative rounded-3xl overflow-hidden border border-white/5 group">
             <Image
               src="/profile.jpg"
               alt="Profile"
@@ -133,52 +133,57 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Social Icons Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col grid md:grid-cols-3 gap-4 md:gap-5">
+          {/* Bottom Row: Socials + Code Box */}
+          <div className="col-span-1 md:col-span-2 flex flex-row gap-2 sm:gap-4 h-14 sm:h-16 md:h-20 lg:h-24">
             {/* GitHub */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
               href={process.env.NEXT_PUBLIC_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-100 dark:bg-[#09090b] aspect-square rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg">
-              <FaGithub className="text-3xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
-            </a>
+              className="bg-gray-100 dark:bg-[#09090b] h-full aspect-square rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg shrink-0">
+              <FaGithub className="text-xl md:text-4xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
+            </motion.a>
 
             {/* LinkedIn */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
               href={process.env.NEXT_PUBLIC_LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-100 dark:bg-[#09090b] aspect-square rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg">
-              <FaLinkedin className="text-3xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
-            </a>
+              className="bg-gray-100 dark:bg-[#09090b] h-full aspect-square rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg shrink-0">
+              <FaLinkedin className="text-xl md:text-4xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
+            </motion.a>
 
             {/* Email */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
               href={`https://mail.google.com/mail/?view=cm&fs=1&to=${process.env.NEXT_PUBLIC_EMAIL}&body=Heyy%20Pranav,%0D%0A%0D%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding...`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-100 dark:bg-[#09090b] aspect-square rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg">
-              <FaEnvelope className="text-3xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
-            </a>
-          </motion.div>
+              className="bg-gray-100 dark:bg-[#09090b] h-full aspect-square rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg shrink-0">
+              <FaEnvelope className="text-xl md:text-4xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
+            </motion.a>
 
-          {/* Code Box */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65 }}
-            className="bg-gray-100 dark:bg-[#18181b] rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:border-green-500/30 transition-colors">
-            <TextType
-              as="span"
-              text="&lt; Code is Poetry /&gt;"
-              className="text-base md:text-xl font-bold font-mono text-gray-900 dark:text-white"
-            />
-          </motion.div>
+            {/* Code Box */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.65 }}
+              className="flex-1 bg-gray-100 dark:bg-[#18181b] rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:border-green-500/30 transition-colors h-full overflow-hidden">
+              <TextType
+                as="span"
+                text="&lt; Code is Poetry /&gt;"
+                className="text-[10px] sm:text-base font-bold font-mono text-gray-900 dark:text-white whitespace-nowrap px-2"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

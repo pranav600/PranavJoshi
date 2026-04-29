@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto text-center space-y-4">
         {/* Tagline */}
         <p className="text-gray-600 dark:text-gray-300 text-sm font-mono">
-          Built by <span className="text-green-500">prnv.js</span>
+          Built by <span className="text-green-500">Pranav.</span>
         </p>
       </div>
     </footer>

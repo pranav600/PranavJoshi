@@ -104,20 +104,20 @@ const CaseStudies = () => {
         </motion.div>
 
         {/* Case studies grid */}
-        <div className="space-y-32">
+        <div className="flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none hide-scrollbar space-x-6 md:space-x-0 md:space-y-32 pb-8 md:pb-0 px-4 md:px-0 -mx-4 md:mx-0">
           {caseStudies.map((project, index) => (
             <motion.div
               key={project.title}
-              className={`group relative flex flex-col ${
+              className={`group relative flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-auto snap-center flex flex-col ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } items-center gap-12`}
+              } items-center gap-0 md:gap-12`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}>
               {/* Image container */}
               <motion.div
-                className={`relative w-full md:w-1/2 h-96 rounded-2xl overflow-hidden ${
+                className={`relative w-full md:w-1/2 h-[450px] md:h-96 rounded-[2rem] md:rounded-2xl overflow-hidden ${
                   index % 2 === 0 ? "md:rotate-0" : "md:-rotate-0"
                 } shadow-2xl`}
                 whileHover={{
@@ -127,7 +127,8 @@ const CaseStudies = () => {
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                  className="block w-full h-full">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -136,7 +137,8 @@ const CaseStudies = () => {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={index < 2}
                   />
-                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  {/* Desktop Hover Overlay */}
+                  <div className="hidden md:flex absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
                     <span className="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center gap-2">
                       View Project
                       <svg
@@ -154,13 +156,43 @@ const CaseStudies = () => {
                       </svg>
                     </span>
                   </div>
+
+                  {/* Mobile Glass Overlay (Hidden on Desktop) */}
+                  <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex flex-col justify-end p-6 sm:p-8">
+                    <div className="flex items-center gap-3 text-sm text-gray-300 mb-3">
+                      <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/30 backdrop-blur-md">
+                        {project.category}
+                      </span>
+                      <span className="font-bold text-white">{project.year}</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2 leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm line-clamp-2 mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-white/10 text-white text-xs font-mono rounded-md backdrop-blur-md border border-white/10">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.tech.length > 3 && (
+                        <span className="px-2 py-1 bg-white/10 text-white text-xs font-mono rounded-md backdrop-blur-md border border-white/10">
+                          +{project.tech.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </a>
               </motion.div>
 
-              {/* Content */}
-              <div className="w-full md:w-1/2 space-y-6">
+              {/* Desktop Content (Hidden on Mobile) */}
+              <div className="hidden md:block w-full md:w-1/2 space-y-6">
                 <div className="flex items-center gap-4 text-sm text-gray-400">
-                  <span className="px-3 py-1 bg-gray-800 rounded-full">
+                  <span className="px-3 py-1 bg-gray-800 text-white rounded-full">
                     {project.category}
                   </span>
                   <span className="font-bold text-xl">{project.year}</span>
@@ -184,7 +216,7 @@ const CaseStudies = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-1 bg-gray-100/50 dark:bg-gray-800 dark:text-gray-200 text-l font-mono rounded-full border border-gray-800 transition-colors duration-300">
+                      className="px-4 py-1 bg-gray-100/50 dark:bg-gray-800 dark:text-gray-200 text-sm md:text-base font-mono rounded-full border border-gray-800 transition-colors duration-300">
                       {tech}
                     </span>
                   ))}
