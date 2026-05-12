@@ -76,6 +76,7 @@ const caseStudies = [
   // Add more case studies as needed
 ];
 
+// Main Case Studies Component
 const CaseStudies = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
