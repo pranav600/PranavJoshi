@@ -16,7 +16,7 @@ import TextType from "./ui/TextType";
  */
 // Main Home Component
 const Home = () => {
-  // Render the persistent home section
+  // Render the persistent home section component
   return (
     <section
       id="home"
