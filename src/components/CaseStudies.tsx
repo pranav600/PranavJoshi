@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+// Portfolio projects data — each entry represents a featured case study with
+// title, description, thumbnail, tech stack, and an external project link
 const caseStudies = [
   {
     title: "Luxoro - Online E-commerce Web Application",
@@ -79,11 +81,13 @@ const caseStudies = [
 // Main Case Studies Component
 const CaseStudies = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  // Track scroll progress of the section to drive parallax effects
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
+  // Parallax y-offset values — faster for y1, slower for y2
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
