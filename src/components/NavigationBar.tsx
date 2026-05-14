@@ -4,6 +4,8 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./ui/ThemeToggle";
 
+// Nav links array — each entry maps a visible label to its anchor section ID.
+// Adding a new link here automatically renders it in both desktop and mobile menus.
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Case Studies", href: "#case-studies" },
@@ -16,6 +18,7 @@ const navLinks = [
  */
 // Main NavigationBar Component
 export default function NavigationBar() {
+  // Controls whether the mobile dropdown menu is expanded or collapsed
   const [open, setOpen] = useState(false);
 
   return (
@@ -35,6 +38,7 @@ export default function NavigationBar() {
           </button>
         </div>
 
+        {/* Desktop nav links — hidden on mobile, centered via grid */}
         <div className="hidden md:block justify-self-center">
           <ul className="flex gap-8 text-sm lg:text-lg font-mono text-gray-700 dark:text-gray-200 whitespace-nowrap">
             {navLinks.map((link) => (
