@@ -16,8 +16,10 @@ import {
   FaWind,
 } from "react-icons/fa";
 
+// Technology stack data grouped by category: Frontend, Backend, and Tools
 const technologies = [
   {
+    // Frontend frameworks and styling libraries
     title: "Frontend",
     items: [
       { name: "React", logo: <FaReact /> },
@@ -28,6 +30,7 @@ const technologies = [
     ],
   },
   {
+    // Backend runtimes, frameworks, and databases
     title: "Backend",
     items: [
       { name: "Node.js", logo: <FaNodeJs /> },
@@ -37,6 +40,7 @@ const technologies = [
     ],
   },
   {
+    // Developer tools, AI assistants, and deployment platforms
     title: "Tools",
     items: [
       { name: "VS Code", logo: <FaCode /> },
@@ -49,6 +53,12 @@ const technologies = [
   },
 ];
 
+/**
+ * Technologies - Displays the full tech stack in an animated 3-column grid.
+ * Each column represents a category (Frontend, Backend, Tools) with
+ * staggered framer-motion animations on scroll.
+ */
+// Main Technologies Component
 const Technologies = () => {
   return (
     <section
@@ -65,6 +75,7 @@ const Technologies = () => {
           <div className="h-1 w-20 bg-green-500 rounded-full mx-auto" />
         </motion.div>
 
+        {/* Animated 3-column tech grid — staggered by category index */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {technologies.map((col, idx) => (
             <motion.div
