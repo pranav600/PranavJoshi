@@ -69,9 +69,9 @@ const Home = () => {
           </motion.a>
         </motion.div>
 
-        {/* Right Column: Bento Grid */}
+        {/* Right Column: Bento Grid — 2x2 card layout with social links row at bottom */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full min-h-[500px]">
-          {/* Location Card */}
+          {/* Location Card — shows current city with hover accent color */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Profile Image Card */}
+          {/* Profile Image Card — spans 2 rows on md+; hover reveals name overlay */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -114,7 +114,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Tech Stack / Gradient Card */}
+          {/* Tech Stack Card — gradient background showing core expertise icons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Bottom Row: Socials + Code Box */}
+          {/* Bottom Row: Social links (GitHub, LinkedIn, Email) + animated code tagline */}
           <div className="col-span-1 md:col-span-2 flex flex-row gap-2 sm:gap-4 h-14 sm:h-16 md:h-20 lg:h-24">
             {/* GitHub */}
             <motion.a
