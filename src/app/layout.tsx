@@ -7,11 +7,13 @@ import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
+// Geist Sans — primary UI font loaded from Google Fonts via next/font
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+// Geist Mono — monospace font used for code snippets and tech labels
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -31,6 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>
+        {/*
+         * Inline theme script — runs before React hydration to prevent
+         * flash-of-wrong-theme (FOWT) by reading localStorage and applying
+         * the 'dark' class to <html> synchronously before first paint.
+         */}
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
