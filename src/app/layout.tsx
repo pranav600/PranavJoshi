@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
-// Geist Sans — primary UI font loaded from Google Fonts via next/font
+// Geist Sans — primary UI font loaded from next/font/google
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
