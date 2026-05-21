@@ -58,7 +58,7 @@ const technologies = [
  * Each column represents a category (Frontend, Backend, Tools) with
  * staggered framer-motion animations on scroll.
  */
-// Main Technologies Component
+// Main Technologies Section Component
 const Technologies = () => {
   return (
     <section
