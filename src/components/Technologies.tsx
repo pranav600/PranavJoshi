@@ -16,7 +16,7 @@ import {
   FaWind,
 } from "react-icons/fa";
 
-// Technology stack data grouped by category: Frontend, Backend, and Tools
+// Technology stack data array grouped by category: Frontend, Backend, and Tools
 const technologies = [
   {
     // Frontend frameworks and styling libraries
