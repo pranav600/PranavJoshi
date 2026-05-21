@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Portfolio projects data — each entry represents a featured case study with
+// Portfolio case studies data — each entry represents a featured case study with
 // title, description, thumbnail, tech stack, and an external project link
 const caseStudies = [
   {
