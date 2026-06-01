@@ -24,23 +24,7 @@ const caseStudies = [
     ],
     link: process.env.NEXT_PUBLIC_LUXORO_LINK,
   },
-  {
-    title: "Calendar Buddy",
-    description:
-      "Built a calendar based note management app enabling users to create, view, and organize day wise notes efficiently",
-    image: "/calendar-buddy.png",
-    category: "Full Stack App",
-    year: "2025",
-    tech: [
-      "Next.js",
-      "React.js",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "Google Auth",
-    ],
-    link: process.env.NEXT_PUBLIC_CALENDAR_BUDDY_LINK,
-  },
+
   {
     title: "PropFind",
     description:
@@ -57,6 +41,23 @@ const caseStudies = [
       "Pandas",
     ],
     link: process.env.NEXT_PUBLIC_PROPFIND_LINK, // Update with your actual env variable
+  },
+  {
+    title: "Calendar Buddy",
+    description:
+      "Built a calendar based note management app enabling users to create, view, and organize day wise notes efficiently",
+    image: "/calendar-buddy.png",
+    category: "Full Stack App",
+    year: "2025",
+    tech: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Google Auth",
+    ],
+    link: process.env.NEXT_PUBLIC_CALENDAR_BUDDY_LINK,
   },
   {
     title: "Blobify3D",
@@ -133,6 +134,7 @@ const CaseStudies = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View Case Study: ${project.title}`}
                   className="block w-full h-full">
                   <Image
                     src={project.image}
@@ -208,6 +210,7 @@ const CaseStudies = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`View Case Study: ${project.title}`}
                     className="transition-colors duration-300">
                     {project.title}
                   </a>
