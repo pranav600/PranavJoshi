@@ -26,7 +26,7 @@ export default function SnowfallBackground() {
         pointerEvents: "none", // Let clicks pass through
       }}>
       <Snowfall
-        snowflakeCount={200}
+        snowflakeCount={150}
         color="rgba(223, 213, 213, 1)" // Subtle white
         style={{
           position: "absolute",
