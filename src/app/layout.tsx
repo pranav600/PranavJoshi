@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pranav Joshi | Full Stack Developer Portfolio",
+  title: "Pranav Joshi | Full Stack Developer",
   description: "Portfolio of Pranav Joshi, a Full Stack Developer building accessible, pixel-perfect, and performant web experiences.",
 };
 
