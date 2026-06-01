@@ -27,6 +27,7 @@ export default function NavigationBar() {
         {/* Left: Hamburger (mobile) */}
         <div className="flex items-center gap-4 justify-self-start">
           <button
+            type="button"
             className="md:hidden inline-flex items-center text-gray-700 dark:text-gray-200 hover:text-green-500 dark:hover:text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}>
@@ -44,6 +45,7 @@ export default function NavigationBar() {
             {navLinks.map((link) => (
               <li key={link.name}>
                 <button
+                  type="button"
                   onClick={() => {
                     const element = document.querySelector(link.href);
                     element?.scrollIntoView({ behavior: "smooth" });
@@ -69,6 +71,7 @@ export default function NavigationBar() {
             {navLinks.map((link) => (
               <li key={link.name}>
                 <button
+                  type="button"
                   onClick={() => {
                     setOpen(false);
                     const element = document.querySelector(link.href);
