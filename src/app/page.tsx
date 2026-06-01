@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
 export default function MainPage() {
   return (
     <>
-      <Home />
-      <CaseStudies />
-      <Technologies />
+      <main className="min-h-screen">
+        <Home />
+        <CaseStudies />
+        <Technologies />
+      </main>
       <Footer />
     </>
   );
