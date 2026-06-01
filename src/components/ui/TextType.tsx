@@ -24,6 +24,10 @@ interface TextTypeProps {
   reverseMode?: boolean;
 }
 
+/**
+ * TextType - A highly interactive typing animation component.
+ * Supports looping, backspacing, custom speeds, colors, and visibility triggers.
+ */
 const TextType = ({
   text,
   as: Component = 'div',
