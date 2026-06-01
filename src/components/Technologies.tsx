@@ -34,7 +34,7 @@ const technologies = [
     title: "Backend",
     items: [
       { name: "Node.js", logo: <FaNodeJs /> },
-      { name: "Express.js", logo: <FaReact /> },
+      { name: "Express.js", logo: <FaNodeJs /> },
       { name: "MongoDB", logo: <FaDatabase /> },
       { name: "Python", logo: <FaPython /> },
     ],
