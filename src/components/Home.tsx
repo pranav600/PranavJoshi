@@ -144,6 +144,7 @@ const Home = () => {
               href={process.env.NEXT_PUBLIC_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="bg-gray-100 dark:bg-[#09090b] h-full aspect-square rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg shrink-0">
               <FaGithub className="text-xl md:text-4xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
             </motion.a>
@@ -156,6 +157,7 @@ const Home = () => {
               href={process.env.NEXT_PUBLIC_LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="bg-gray-100 dark:bg-[#09090b] h-full aspect-square rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg shrink-0">
               <FaLinkedin className="text-xl md:text-4xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
             </motion.a>
@@ -168,6 +170,7 @@ const Home = () => {
               href={`https://mail.google.com/mail/?view=cm&fs=1&to=${process.env.NEXT_PUBLIC_EMAIL}&body=Heyy%20Pranav,%0D%0A%0D%0AI%20wanted%20to%20reach%20out%20to%20you%20regarding...`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Send Email"
               className="bg-gray-100 dark:bg-[#09090b] h-full aspect-square rounded-2xl md:rounded-[2rem] border border-gray-200 dark:border-white/5 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 group shadow-lg shrink-0">
               <FaEnvelope className="text-xl md:text-4xl text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" />
             </motion.a>
