@@ -20,31 +20,31 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full px-4 md:px-8 py-20 flex items-center justify-center relative overflow-hidden font-mono">
+      className="min-h-screen w-full px-4 md:px-8 py-12 md:py-20 flex items-center justify-center relative overflow-hidden font-mono">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-white dark:bg-[#0a0a0a] -z-10" />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-50 -z-10" />
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
         {/* Left Column: Hero Text */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8">
+          className="space-y-5 md:space-y-8">
           {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-green-900/20 rounded-full border border-green-500/30">
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-green-900/20 rounded-full border border-green-500/30">
             <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
-            <span className="text-green-600 text-sm font-semibold tracking-wide">
+            <span className="text-green-600 text-xs md:text-sm font-semibold tracking-wide">
               AVAILABLE FOR WORK
             </span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
             Hi, I'm a <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
               Full Stack
@@ -53,7 +53,7 @@ const Home = () => {
             Developer<span className="text-green-500">.</span>
           </h1>
 
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
             I build accessible, pixel-perfect, and performant web experiences.
             Passionate about merging clean code with thoughtful design.
           </p>
@@ -64,13 +64,13 @@ const Home = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+            className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-sm md:text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
             Resume <FaArrowRight />
           </motion.a>
         </motion.div>
 
         {/* Right Column: Bento Grid — 2x2 card layout with social links row at bottom */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full min-h-[500px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full min-h-[400px] md:min-h-[500px]">
           {/* Location Card — shows current city with hover accent color */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

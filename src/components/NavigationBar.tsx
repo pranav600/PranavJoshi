@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./ui/ThemeToggle";
 
 // Nav links array — each entry maps a visible label to its anchor section ID.
-// Adding a new link here automatically renders it in both desktop and mobile menus.
+// Adding a new link here automatically renders it.
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Case Studies", href: "#case-studies" },
@@ -13,35 +11,19 @@ const navLinks = [
 ];
 
 /**
- * NavigationBar - Sticky responsive navigation bar with mobile hamburger menu,
- * smooth-scroll nav links, and a light/dark theme toggle.
+ * NavigationBar - Sticky responsive navigation bar with direct nav links
+ * and a light/dark theme toggle. No hamburger menu.
  */
-// Main NavigationBar Component
 export default function NavigationBar() {
-  // Controls whether the mobile dropdown menu is expanded or collapsed
-  const [open, setOpen] = useState(false);
-
   return (
     <nav className="w-full bg-gray-50/90 dark:bg-[#181818]/90 backdrop-blur sticky top-0 z-50 border-b border-gray-200 dark:border-white/5">
       <div className="max-w-0xl mx-auto px-5 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
-        {/* Left: Hamburger (mobile) */}
-        <div className="flex items-center gap-4 justify-self-start">
-          <button
-            type="button"
-            className="md:hidden inline-flex items-center text-gray-700 dark:text-gray-200 hover:text-green-500 dark:hover:text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}>
-            {open ? (
-              <FiX className="text-2xl" />
-            ) : (
-              <FiMenu className="text-2xl" />
-            )}
-          </button>
-        </div>
+        {/* Left slot (empty placeholder to center nav links) */}
+        <div className="flex items-center gap-4 justify-self-start"></div>
 
-        {/* Desktop nav links — hidden on mobile, centered via grid */}
-        <div className="hidden md:block justify-self-center">
-          <ul className="flex gap-8 text-sm lg:text-lg font-mono text-gray-700 dark:text-gray-200 whitespace-nowrap">
+        {/* Navigation links — visible on both mobile and desktop, centered via grid */}
+        <div className="justify-self-center">
+          <ul className="flex gap-4 md:gap-8 text-xs md:text-sm lg:text-lg font-mono text-gray-700 dark:text-gray-200 whitespace-nowrap">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <button
@@ -63,28 +45,7 @@ export default function NavigationBar() {
           <ThemeToggle />
         </div>
       </div>
-
-      {/* Mobile dropdown */}
-      {open && (
-        <div className="md:hidden border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-[#121212]">
-          <ul className="flex flex-col px-4 py-3 gap-3 text-sm font-mono text-gray-700 dark:text-gray-200">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    const element = document.querySelector(link.href);
-                    element?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="block w-full text-left py-2 hover:text-green-500 dark:hover:text-green-400">
-                  {link.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </nav>
   );
 }
+
