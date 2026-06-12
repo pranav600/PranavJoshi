@@ -110,20 +110,90 @@ const CaseStudies = () => {
         </motion.div>
 
         {/* Case studies grid */}
-        <div className="flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none hide-scrollbar space-x-6 md:space-x-0 md:space-y-32 pb-8 md:pb-0 px-4 md:px-0 -mx-4 md:mx-0">
+        <div className="flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none hide-scrollbar space-x-5 md:space-x-0 md:space-y-32 pb-8 md:pb-0 px-6 md:px-0 -mx-6 md:mx-0">
           {caseStudies.map((project, index) => (
             <motion.div
               key={project.title}
-              className={`group relative flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-auto snap-center flex flex-col ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } items-center gap-0 md:gap-12`}
+              className={`group relative flex-shrink-0 w-[80vw] sm:w-[70vw] md:w-auto snap-start flex flex-col ${
+                index % 2 === 0 ? "md:flex-row rotate-[-1deg] md:rotate-0" : "md:flex-row-reverse rotate-[1deg] md:rotate-0"
+              } items-center gap-0 md:gap-12 transition-transform duration-500`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}>
-              {/* Image container */}
+              {/* Mobile View Card (Hidden on Desktop) */}
+              <div className="md:hidden w-full flex flex-col bg-white/95 dark:bg-zinc-900/90 backdrop-blur-md border border-gray-200/80 dark:border-zinc-800/80 rounded-3xl overflow-hidden shadow-xl transition-all duration-300">
+                {/* Image container */}
+                <div className="relative w-full h-52 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw"
+                    priority={index < 2}
+                  />
+                </div>
+
+                {/* Content section */}
+                <div className="p-6 flex flex-col flex-grow text-left">
+                  {/* Category (green box) and Year (gray box) */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-2.5 py-0.5 bg-green-500/10 dark:bg-green-500/20 text-green-600 dark:text-green-400 text-xs font-semibold rounded-full border border-green-500/20 dark:border-green-500/30">
+                      {project.category}
+                    </span>
+                    <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-300 text-xs font-bold rounded-md border border-gray-200 dark:border-zinc-700/50">
+                      {project.year}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-snug">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
+                    {project.description}
+                  </p>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2 mt-auto mb-5">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 bg-gray-100 dark:bg-zinc-800/80 text-gray-700 dark:text-zinc-300 text-xs font-mono rounded-md border border-gray-200 dark:border-zinc-700/50">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* View project button - Only this is clickable */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Live Demo: ${project.title}`}
+                    className="pt-4 border-t border-gray-100 dark:border-zinc-800/60 flex items-center justify-between text-green-600 dark:text-green-400 font-semibold text-sm active:opacity-75 transition-opacity group/btn">
+                    <span>Live Demo</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-transform duration-300 group-hover/btn:translate-x-1">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Image container (Desktop Only) */}
               <motion.div
-                className={`relative w-full md:w-1/2 h-[450px] md:h-96 rounded-[2rem] md:rounded-2xl overflow-hidden ${
+                className={`hidden md:block relative md:w-1/2 h-[450px] md:h-96 rounded-[2rem] md:rounded-2xl overflow-hidden ${
                   index % 2 === 0 ? "md:rotate-0" : "md:-rotate-0"
                 } shadow-2xl`}
                 whileHover={{
@@ -134,7 +204,7 @@ const CaseStudies = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`View Case Study: ${project.title}`}
+                  aria-label={`Live Demo: ${project.title}`}
                   className="block w-full h-full">
                   <Image
                     src={project.image}
@@ -163,41 +233,11 @@ const CaseStudies = () => {
                       </svg>
                     </span>
                   </div>
-
-                  {/* Mobile Glass Overlay (Hidden on Desktop) */}
-                  <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                    <div className="flex items-center gap-3 text-sm text-gray-300 mb-3">
-                      <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/30 backdrop-blur-md">
-                        {project.category}
-                      </span>
-                      <span className="font-bold text-white">{project.year}</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2 leading-tight">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-300 text-sm line-clamp-2 mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-white/10 text-white text-xs font-mono rounded-md backdrop-blur-md border border-white/10">
-                          {tech}
-                        </span>
-                      ))}
-                      {project.tech.length > 3 && (
-                        <span className="px-2 py-1 bg-white/10 text-white text-xs font-mono rounded-md backdrop-blur-md border border-white/10">
-                          +{project.tech.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
                 </a>
               </motion.div>
 
               {/* Desktop Content (Hidden on Mobile) */}
-              <div className="hidden md:block w-full md:w-1/2 space-y-6">
+              <div className="hidden md:block w-full md:w-1/2 space-y-6 text-left">
                 <div className="flex items-center gap-4 text-sm text-gray-400">
                   <span className="px-3 py-1 bg-gray-800 text-white rounded-full">
                     {project.category}
@@ -210,7 +250,7 @@ const CaseStudies = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`View Case Study: ${project.title}`}
+                    aria-label={`Live Demo: ${project.title}`}
                     className="transition-colors duration-300">
                     {project.title}
                   </a>
@@ -233,6 +273,7 @@ const CaseStudies = () => {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
