@@ -87,7 +87,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-1">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                Rajkot, India
+                Gujarat, India
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Based in
