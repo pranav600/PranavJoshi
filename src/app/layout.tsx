@@ -21,7 +21,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Pranav Joshi | Full Stack Developer",
-  description: "Portfolio of Pranav Joshi, a Full Stack Developer building accessible, pixel-perfect, and performant web experiences.",
+  description:
+    "Portfolio of Pranav Joshi, a Full Stack Developer building accessible, pixel-perfect, and performant web experiences.",
+  icons: {
+    icon: "https://lh3.googleusercontent.com/d/1RaEQ-VWHuaY7_RmByDdbKnLmZoDGZzQ3",
+    shortcut: "https://lh3.googleusercontent.com/d/1RaEQ-VWHuaY7_RmByDdbKnLmZoDGZzQ3",
+    apple: "https://lh3.googleusercontent.com/d/1RaEQ-VWHuaY7_RmByDdbKnLmZoDGZzQ3",
+  },
 };
 
 // Root Layout Component
