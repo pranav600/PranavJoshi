@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Pranav Joshi, a Full Stack Developer building accessible, pixel-perfect, and performant web experiences.",
   icons: {
-    icon: "https://lh3.googleusercontent.com/d/1RaEQ-VWHuaY7_RmByDdbKnLmZoDGZzQ3",
-    shortcut: "https://lh3.googleusercontent.com/d/1RaEQ-VWHuaY7_RmByDdbKnLmZoDGZzQ3",
-    apple: "https://lh3.googleusercontent.com/d/1RaEQ-VWHuaY7_RmByDdbKnLmZoDGZzQ3",
+    icon: process.env.NEXT_PUBLIC_FAVICON_DRIVE,
+    shortcut: process.env.NEXT_PUBLIC_FAVICON_DRIVE,
+    apple: process.env.NEXT_PUBLIC_FAVICON_DRIVE,
   },
 };
 
