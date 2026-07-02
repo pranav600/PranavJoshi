@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FaArrowRight,
@@ -101,13 +100,10 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
             className="min-h-[300px] md:min-h-0 md:row-span-2 relative rounded-3xl overflow-hidden border border-white/5 group">
-            <Image
-              src="/profile.jpg"
+            <img
+              src={process.env.NEXT_PUBLIC_PROFILE_DRIVE}
               alt="Profile"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
               <span className="text-white font-medium">Pranav Joshi</span>
